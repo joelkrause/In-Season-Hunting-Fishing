@@ -4,10 +4,14 @@
       {% include 'breadcrumbs' %}
     </div>
     <h1>
-      {{ collection.title }}
       {% if current_tags %}
-        – {% assign title_tags = current_tags | join: ', ' %}
+        {% assign title_tags = current_tags | join: ', ' %}
         {{ title_tags | replace: '-', ' '}}
+
+        {% else %}
+
+        {{ collection.title }}
+
       {% endif %}
     </h1>
     {% if collection.description != blank %}
@@ -21,17 +25,15 @@
   <div class="grid">
     {% paginate collection.products by 12 %}
 
-      <div class="product-card">
+      <div>
         {% for product in collection.products %}
-          <div class="grid__item one-quarter">
+          <div class="grid__item one-quarter product-card">
             {% if product.featured_image != blank %}
-              <a href="{{ product.url | within: collection }}">
-                {{ product.featured_image.src | img_url: '480x480' | img_tag: product.featured_image.alt }}
-              </a>
+              {{ product.featured_image.src | img_url: '480x480' | img_tag: product.featured_image.alt }}
             {% endif %}
 
-            <p>
-              <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
+            <p class="title">
+              {{ product.title }}
             </p>
             <p>
               {% if product.compare_at_price > product.price %}
@@ -64,6 +66,10 @@
                 {{ 'products.product.sold_out' | t }}
               {% endunless %}
             </p>
+            <div class="reviews-container">
+              <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+            </div>
+            <a href="{{ product.url | within: collection }}" class="button">View Product</a>
           </div>
 
         {% else %}

@@ -1,8 +1,9 @@
 /**==== Fonts ====**/
-@import url('https://fonts.googleapis.com/css?family=Barlow+Condensed:600|Titillium+Web:300,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,700');
+@import url('https://fonts.googleapis.com/css?family=Barlow+Condensed:600');
 
 /**==== Variables ====**/
-$mainFont: "Titillium Web",sans-serif;
+$mainFont: "Roboto",sans-serif;
 $accentFont: "Barlow Condensed",sans-serif;
 
 $accentColor: {{ settings.accentColor }};
@@ -19,6 +20,9 @@ $accentColor: {{ settings.accentColor }};
 body,
 html {
   font-family: $mainFont;
+  font-size: 16px;
+  font-size: 1em;
+  line-height: 1.5;
 }
 
 /**==== Site Header ====**/
@@ -105,7 +109,7 @@ html {
     font-family: $accentFont;
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 18pt;
+    font-size: 16pt;
     padding: 0 2%;
 
     li,
@@ -169,7 +173,7 @@ html {
         width: 100%;
       }
       .menu-contain {
-        width: calc(25% - 23px);
+        width: calc(16.66% - 24px);
         margin-right: 20px;
         height: 100%;
         display: inline-block;
@@ -208,7 +212,7 @@ html {
       padding: 0 0 10px 0;
       font-family: $accentFont;
       font-weight: 700;
-      font-size: 62pt;
+      font-size: 54pt;
       text-transform: uppercase;
       position: relative;
       display: inline-block;
@@ -265,6 +269,58 @@ html {
     z-index: 10;
 }
 
+/**==== Collection Page ====**/
+.product-card {
+
+  .title {
+    font-family: $accentFont;
+    font-weight: 700;
+    color: $accentColor;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  .button {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    background-color: $accentColor;
+    color: white;
+    font-family: $accentFont;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+  }
+  .reviews-container {
+    padding: 0 0 20px 0;
+    .spr-badge-caption {
+      display: none;
+    }
+  }
+}
+
+/**==== Product Page ====**/
+.product-page {
+
+  .price {
+    font-size: 18pt;
+    padding: 0 0 25px 0;
+    color: #27ae60;
+  }
+  button {
+    font-family: $accentFont;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 18pt;
+    width: 100%;
+    background-color: #182968;
+    border: 0;
+    color: white;
+    padding: 15px 0;
+    border-radius: 3px;
+  }
+}
+
 /**==== Footer ====**/
 .site-footer {
     background-color: {{ settings.footer_background }};
@@ -276,4 +332,44 @@ html {
       color: {{ settings.footer_text }};
       text-decoration: none;
     }
+}
+
+ul.tabs {
+    margin: 25px 0 0 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+ul.tabs li {
+    display: inline-block;
+    list-style: none;
+    margin: 0;
+}
+
+ul.tabs li a {
+    background: #e8e9eb;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    border-bottom: 0 !important;
+    margin-bottom: -1px;
+    font-family: $accentFont;
+    text-transform: uppercase;
+    font-size: 14pt;
+    color: $accentColor;
+}
+
+ul.tabs li a.active {
+    color: #fff;
+    background: $accentColor;
+}
+
+ul.tabs li a:hover,
+ul.tabs li a:focus {
+    opacity: 1 !important;
+}
+
+#tab-1, #tab-2, #tab-3 {
+    border: 1px solid #e8e9eb;
+    padding: 15px;
 }

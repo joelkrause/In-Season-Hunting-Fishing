@@ -114,7 +114,7 @@ slate.a11y = {
  */
 
 slate.cart = {
-  
+
   /**
    * Browser cookies are required to use the cart. This function checks if
    * cookies are enabled in the browser.
@@ -247,7 +247,7 @@ slate.rte = {
     options.$iframes.each(function() {
       // Add wrapper to make video responsive
       $(this).wrap('<div class="' + iframeWrapperClass + '"></div>');
-      
+
       // Re-set the src attribute on each iframe after page load
       // for Chrome's "incorrect iFrame content on 'back'" bug.
       // https://code.google.com/p/chromium/issues/detail?id=395791
@@ -1004,4 +1004,24 @@ $(document).ready(function() {
   if (slate.cart.cookiesEnabled()) {
     document.documentElement.className = document.documentElement.className.replace('supports-no-cookies', 'supports-cookies');
   }
+});
+
+$(document).ready(function() {
+  $('ul.tabs').each(function(){
+    var active, content, links = $(this).find('a');
+    active = links.first().addClass('active');
+    content = $(active.attr('href'));
+    links.not(':first').each(function () {
+      $($(this).attr('href')).hide();
+    });
+    $(this).find('a').click(function(e){
+      active.removeClass('active');
+      content.hide();
+      active = $(this);
+      content = $($(this).attr('href'));
+      active.addClass('active');
+      content.show();
+      return false;
+    });
+  });
 });

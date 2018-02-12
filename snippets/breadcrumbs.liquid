@@ -17,7 +17,7 @@
       {% capture url %}/collections/{{ collection.handle }}{% endcapture %}
       {{ collection.title | link_to: url }}
       <span aria-hidden="true">&rsaquo;</span>
-      <span>{{ current_tags | join: " + " }}</span>
+      <span>{{ current_tags | join: " + " | replace: '-', ' ' }}</span>
     {% else %}
       <span>{{ collection.title }}</span>
     {% endif %}
@@ -26,7 +26,7 @@
     {% if current_tags %}
       {{ blog.title | link_to: blog.url }}
       <span aria-hidden="true">&rsaquo;</span>
-      <span>{{ current_tags | join: " + " }}</span>
+      <span>{{ current_tags | join: " + "  | replace: '-', ' ' }}</span>
     {% else %}
     <span>{{ blog.title }}</span>
     {% endif %}
