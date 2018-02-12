@@ -1,0 +1,6 @@
+production:
+  password: 0798370f369032e416c0c786fb761942
+  theme_id: "763363346"
+  store: in-season-hunting-and-fishing.myshopify.com
+  ignore_files:
+    - settings_data.json
