@@ -23,6 +23,14 @@
 </div>
 <div class="wrapper page_wrap">
   <div class="grid">
+    <div class="grid__item one-quarter">
+      <div class="collection_sidebar">
+        {% include 'collection-filter' %}
+
+        {% include 'sort-by-filter' %}
+      </div>
+    </div>
+    <div class="grid__item three-quarters">
     {% paginate collection.products by 12 %}
 
       <div>
@@ -99,5 +107,6 @@
         {% include 'pagination' %}
       {% endif %}
     {% endpaginate %}
+  </div>
   </div>
 </div>

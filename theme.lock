@@ -7,14 +7,16 @@ assets/header-bg.jpg:
   production: 2018-02-12T20:20:45+11:00   9ce2ec847db1fd461f6cc39c54d01151
 assets/ico-select.svg.liquid:
   production: 2018-02-12T11:31:00+11:00   765be6d2ef08d76aa0f1aab48a10e2b7
+assets/logo-black.png:
+  production: 2018-02-13T10:02:26+11:00   df6ddfeb0017efd49ae5c8813c09acbc
 assets/logo.png:
   production: 2018-02-12T16:16:12+11:00   da5412b1e626ba1feca2dd48be14d419
 assets/styles.scss.liquid:
-  production: 2018-02-12T22:50:38+11:00   fb277b4757eab11a5a1ed5a6115ad5de
+  production: 2018-02-13T08:54:11+11:00   19a0d67a237696a1cdcd6dc49804300b
 assets/theme.js:
   production: 2018-02-12T22:35:10+11:00   a18a9b65da1e747c2ebfb58af7c59681
 assets/theme.scss.liquid:
-  production: 2018-02-12T11:38:56+11:00   7c24e4021014be4cc5a1064d17b1fe95
+  production: 2018-02-13T08:54:29+11:00   524cb78255fa2a353e97bb963b3fd0db
 assets/vendor.js:
   production: 2018-02-12T11:31:00+11:00   b8e8dbe1aaf11c882d6d849a708113d1
 config/settings_schema.json:
@@ -24,7 +26,7 @@ layout/gift_card.liquid:
 layout/password.liquid:
   production: 2018-02-12T11:31:00+11:00   a3126a75f83c949db861167020c63219
 layout/theme.liquid:
-  production: 2018-02-12T23:04:13+11:00   c731592511c24821049f328df4d47260
+  production: 2018-02-13T08:19:40+11:00   9a9b30d5d9559c3d70436f4c4e5a48b5
 locales/da.json:
   production: 2018-02-12T11:31:00+11:00   95a58eb18067e4498baaf8f5e1ba3b42
 locales/de.json:
@@ -55,12 +57,14 @@ sections/footer.liquid:
   production: 2018-02-12T23:52:32+11:00   bb448a6913fbc4496cb705579c8fb9bd
 sections/hunting-menu.liquid:
   production: 2018-02-12T17:36:34+11:00   482114186b4dfa83be823e56d0bab83c
-sections/product.liquid:
-  production: 2018-02-12T22:50:51+11:00   f01252e4c9a1731a055b6f82bafc5e5a
+sections/recommended_products.liquid:
+  production: 2018-02-13T08:48:53+11:00   fcac2253915e33487e7104d70cbe3ca9
 sections/site-info.liquid:
   production: 2018-02-12T19:17:47+11:00   87b74745ce558eb70ad0d588e574e8d3
 snippets/breadcrumbs.liquid:
   production: 2018-02-12T23:02:47+11:00   499b2a6a9bdcf8e7e4ca16ab047e5c97
+snippets/collection-filter.liquid:
+  production: 2018-02-13T08:20:28+11:00   db57d52dc8cb668bea5d100b463c0dfc
 snippets/icon-amazon_payments.liquid:
   production: 2018-02-12T11:31:00+11:00   b5ff59d6df578a0fc1ca86322682cbaf
 snippets/icon-american_express.liquid:
@@ -140,11 +144,13 @@ snippets/no-blocks.liquid:
 snippets/pagination.liquid:
   production: 2018-02-12T11:31:01+11:00   d4a467973d86f8663428ddaaaf035d12
 snippets/site-header.liquid:
-  production: 2018-02-12T18:56:02+11:00   f7e1dbe44751fe1c79ff24ca5580350b
+  production: 2018-02-13T09:36:00+11:00   a549cade554671bd73ea562bbd3c723b
 snippets/social-meta-tags.liquid:
   production: 2018-02-12T11:31:01+11:00   312dfc487a1aa92503527dbc4a4e56b4
 snippets/social-sharing.liquid:
   production: 2018-02-12T11:31:01+11:00   987f1d283ac10d7849dc69d76221e37a
+snippets/sort-by-filter.liquid:
+  production: 2018-02-13T08:22:01+11:00   0b2b7d568ace436ecc8ff368756d3c0c
 templates/404.liquid:
   production: 2018-02-12T11:31:01+11:00   a345bd048463d3bb245873ed26a41a98
 templates/article.liquid:
@@ -154,7 +160,7 @@ templates/blog.liquid:
 templates/cart.liquid:
   production: 2018-02-12T11:31:01+11:00   f927f61105d8bc9cd43f052dbc4a1e63
 templates/collection.liquid:
-  production: 2018-02-12T23:01:32+11:00   02cfe19bdfd7b7003a8f7f755139d49e
+  production: 2018-02-13T08:22:28+11:00   f8f5a18159bfc7bf3d01e138d828e602
 templates/customers/account.liquid:
   production: 2018-02-12T11:31:01+11:00   4742bf0cc429943e699cbe9a0f528fa8
 templates/customers/activate_account.liquid:
@@ -184,6 +190,6 @@ templates/page.styles.liquid:
 templates/password.liquid:
   production: 2018-02-12T11:31:02+11:00   73bba9f7f2437720e1e1fde57b544859
 templates/product.liquid:
-  production: 2018-02-12T11:31:02+11:00   4fd44b8093bad2e827e58f5564520abb
+  production: 2018-02-13T08:50:13+11:00   4c32f7bab367f6e46d9aa1008c2d3b36
 templates/search.liquid:
   production: 2018-02-12T11:31:02+11:00   63801fc20846d04a1b422d5bf6d3ca45
