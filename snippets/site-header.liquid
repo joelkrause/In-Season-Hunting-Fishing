@@ -1,0 +1,52 @@
+<div data-section-type="header-section">
+    <header class="top-bar">
+    <div class="wrapper">
+      <div class="grid">
+        <div class="grid__item one-half">
+          menu
+        </div>
+        <div class="grid__item one-half text-right">
+          <a href="/cart">
+            {% include 'icon-cart' %}
+            {{ 'layout.cart.title' | t }}
+            ({{ cart.item_count }} {{ 'layout.cart.items_count' | t: count: cart.item_count }})
+          </a>
+
+          <a href="/account">
+            My Account
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <header role="banner" class="site-header">
+    <div class="wrapper">
+      <div class="site_logo">
+        <a href="#">
+          {{ 'logo.png' | asset_url | img_tag }}
+        </a>
+      </div>
+
+        {% include 'mega-menu' %}
+
+        <div class="search-bar">
+          <form action="/search" method="get" role="search">
+            <label for="Search" class="label-hidden">
+              {{ 'general.search.placeholder' | t }}
+            </label>
+            <input type="search"
+                   name="q"
+                   id="Search"
+                   value="{{ search.terms | escape }}"
+                   placeholder="{{ 'general.search.placeholder' | t }}">
+            <button type="submit" class="btn">
+              {% include 'icon-search' %}
+              <span class="icon-fallback-text">{{ 'general.search.submit' | t }}</span>
+            </button>
+          </form>
+        </div>
+    </div>
+  </header>
+
+  {% section 'site-info' %}
+</div>

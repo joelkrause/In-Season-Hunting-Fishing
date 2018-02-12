@@ -1,0 +1,75 @@
+<div class="menu_container">
+  {% for block in section.blocks %}
+  <div class="menu-contain">
+    <div class="title">
+      {{ block.settings.title }}
+    </div>
+    <div class="menu">
+      <ul class="site-nav">
+        {% for link in linklists[block.settings.menu].links %}
+          {%- assign child_list_handle = link.title | handleize -%}
+          {% if menus[child_list_handle].links != blank %}
+            <li class="site-nav--has-submenu{% if link.active %} site-nav--active{% endif %}">
+              <a href="{{ link.url }}" class="site-nav__link">
+                {{ link.title }}
+                {% include 'icon-arrow-down' %}
+              </a>
+              <ul class="site-nav__submenu">
+                {% for childlink in menus[child_list_handle].links %}
+                  <li {% if childlink.active %}class="site-nav--active"{% endif %}>
+                    <a href="{{ childlink.url }}" class="site-nav__link">{{ childlink.title | escape }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </li>
+          {% else %}
+            <li {% if link.active %}class="site-nav--active"{% endif %}>
+              <a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "Shop Camping Mega Menu",
+  "settings": [
+  ],
+  "blocks": [
+    {
+      "type": "select",
+      "name": "Menu",
+      "settings": [
+        {
+          "id": "title",
+          "type": "text",
+       		"label": "Menu Title"
+        },
+		{
+			"id": "menu",
+			"type": "link_list",
+			"label": "Sub Menu"
+		}
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Work Blocks",
+      "category": "Work Items",
+      "blocks": [
+        {
+          "type": "select"
+        },
+        {
+          "type": "select"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

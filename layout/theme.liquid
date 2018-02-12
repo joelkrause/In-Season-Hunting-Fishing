@@ -33,6 +33,9 @@
   {% include 'social-meta-tags' %}
 
   {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
+  {{ 'styles.scss.css' | asset_url | stylesheet_tag }}
+
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
   <script>
     document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
@@ -65,7 +68,7 @@
 
   <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
 
-  {% section 'header' %}
+  {% include 'site-header' %}
 
   <main role="main" id="MainContent">
     {{ content_for_layout }}

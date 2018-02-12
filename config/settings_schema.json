@@ -56,6 +56,85 @@
         "label": "Text color",
         "default": "#000",
         "info": "Color used for content and paragraph text"
+      },
+      {
+        "type": "color",
+        "id": "accentColor",
+        "label": "Accent color",
+        "default": "#000",
+        "info": "Color used for accents"
+      },
+      {
+        "type": "color",
+        "id": "site_header_background",
+        "label": "Site header background",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "site_header_text",
+        "label": "Site header text color",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "site_header_link_color",
+        "label": "Site header link color",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "top_bar_background",
+        "label": "Top bar background color",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "top_bar_color",
+        "label": "Top bar color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "main_nav_background",
+        "label": "Main nav background",
+        "default": "#000000",
+        "info": "Color used for main nav background"
+      },
+      {
+        "type": "color",
+        "id": "main_nav_color",
+        "label": "Main nav link color",
+        "default": "#ffffff",
+        "info": "Color used for main nav links"
+      },
+      {
+        "type": "color",
+        "id": "site_info_background",
+        "label": "Site info background color",
+        "default": "#cccccc",
+        "info": "Color used for site info background"
+      },
+      {
+        "type": "color",
+        "id": "site_info_text_color",
+        "label": "Site info text color",
+        "default": "#ffffff",
+        "info": "Color used for site info text and links"
+      },
+      {
+        "type": "color",
+        "id": "footer_background",
+        "label": "Footer background color",
+        "default": "#333333",
+        "info": "Color used for footer background"
+      },
+      {
+        "type": "color",
+        "id": "footer_text",
+        "label": "Footer text color",
+        "default": "#ffffff",
+        "info": "Color used for footer text and links"
       }
     ]
   },
