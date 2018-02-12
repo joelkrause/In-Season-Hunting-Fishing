@@ -6,7 +6,8 @@
   {% endif %}
 </style>
 <div data-section-id="{{ section.id }}" data-section-type="header-section">
-  <header role="banner">
+  <header role="banner" class="site-header">
+  <div class="wrapper">
     {% if template.name == 'index' %}
       <h1 itemscope itemtype="http://schema.org/Organization">
     {% else %}
@@ -74,7 +75,7 @@
         <span class="icon-fallback-text">{{ 'general.search.submit' | t }}</span>
       </button>
     </form>
-
+</div>
   </header>
 
   <nav role="navigation">
