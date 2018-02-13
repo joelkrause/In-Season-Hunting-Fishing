@@ -1,10 +1,20 @@
+<div class="page-title-container">
+  <div class="wrapper">
+    <div class="breadcrumbs">
+      {% include 'breadcrumbs' %}
+    </div>
+    <h1>
+      {{ 'customer.login.title' | t }}
+    </h1>
+  </div>
+</div>
+<div class="wrapper page_wrap">
 <div class="form-success hide" id="ResetSuccess">
   {{ 'customer.recover_password.success' | t }}
 </div>
 
 <div id="CustomerLoginForm">
   {% form 'customer_login' %}
-    <h1>{{ 'customer.login.title' | t }}</h1>
 
     {{ form.errors | default_errors }}
 
@@ -85,3 +95,4 @@
     <input type="submit" class="btn" value="{{ 'customer.login.guest_continue' | t }}">
   {% endform %}
 {% endif %}
+</div>

@@ -1,5 +1,15 @@
+<div class="page-title-container">
+  <div class="wrapper">
+    <div class="breadcrumbs">
+      {% include 'breadcrumbs' %}
+    </div>
+    <h1>
+      {{ 'cart.general.title' | t }}
+    </h1>
+  </div>
+</div>
+<div class="wrapper page_wrap">
 {% if cart.item_count > 0 %}
-  <h1>{{ 'cart.general.title' | t }}</h1>
 
   <form action="/cart" method="post" novalidate>
     <table class="responsive-table">
@@ -106,7 +116,6 @@
     <input type="submit" name="checkout" class="btn" value="{{ 'cart.general.checkout' | t }}">
   </form>
 {% else %}
-  <h1>{{ 'cart.general.title' | t }}</h1>
 
   {% comment %}
   Cart empty state
@@ -126,3 +135,4 @@
     <p>{{ 'cart.general.cookies_required' | t }}</p>
   </div>
 {% endif %}
+</div>

@@ -36,6 +36,12 @@
       <div>
         {% for product in collection.products %}
           <div class="grid__item one-quarter product-card">
+            {% if product.price_varies %}
+              {%- assign sale_price = product.price | money -%}
+              <div class="on-sale">
+                {{ 'products.product.on_sale' | t }}
+              </div>
+            {% endif %}
             {% if product.featured_image != blank %}
               {{ product.featured_image.src | img_url: '480x480' | img_tag: product.featured_image.alt }}
             {% endif %}
@@ -48,9 +54,6 @@
 
                 {% if product.price_varies %}
                   {%- assign sale_price = product.price | money -%}
-                  {{ 'products.product.on_sale_from_html' | t: price: sale_price }}
-                {% else %}
-                  {{ 'products.product.on_sale' | t }}
                   {{ product.price | money }}
                 {% endif %}
 
@@ -58,21 +61,16 @@
 
                 {% if product.price_varies %}
                   {%- assign price = product.price | money -%}
-                  {{ 'products.product.from_text_html' | t: price: price }}
                 {% else %}
                   {{ product.price | money }}
                 {% endif %}
 
               {% endif %}
 
-              {% if product.compare_at_price > product.price %}
-                <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
-                <s>{{ product.compare_at_price | money }}</s>
-              {% endif %}
-
               {% unless product.available %}
                 {{ 'products.product.sold_out' | t }}
               {% endunless %}
+              <small>inc. GST</small>
             </p>
             <div class="reviews-container">
               <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>

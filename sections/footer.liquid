@@ -1,56 +1,34 @@
 <footer class="site-footer">
 <div class="wrapper">
 <div class="grid">
-  {%- assign social_accounts = 'Facebook, Twitter, Pinterest, Instagram, Snapchat, Tumblr, YouTube, Vimeo,' | split: ', ' -%}
-  <ul>
-    {% for social in social_accounts %}
-      {%- assign social_handle = social | handleize -%}
-      {% capture social_link %}social_{{ social_handle }}_link{% endcapture %}
-      {% capture social_icon %}icon-{{ social_handle }}{% endcapture %}
-
-      {% if settings[social_link] != blank %}
-        <li>
-          <a href="{{ settings[social_link] }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: social }}">
-            {% include social_icon %}
-            <span class="icon-fallback-text">{{ social }}</span>
-          </a>
-        </li>
-      {% endif %}
-
-    {% endfor %}
-  </ul>
-
-  {% if section.settings.show_payment_icons %}
-    {% unless shop.enabled_payment_types == empty %}
-      {%- assign payment_icons_available = 'amazon_payments,american_express,apple_pay,bitcoin,cirrus,dankort,diners_club,discover,dogecoin,dwolla,forbrugsforeningen,interac,jcb,litecoin,maestro,master,paypal,visa' | split: ',' -%}
-
-      <span class="visually-hidden">{{ 'layout.footer.payment_methods' | t }}</span>
-      <ul class="payment-icons">
-        {% for type in shop.enabled_payment_types %}
-          {% if payment_icons_available contains type %}
-            <li>
-              {%- assign icon_name = type | prepend: 'icon-' -%}
-              {% include icon_name %}
-              <span class="visually-hidden">{{ type | capitalize | replace: '_', ' ' }}</span>
-            </li>
-          {% endif %}
+  <div class="grid__item one-third">
+    <h2>Customer Care</h2>
+    {%- assign footer_linklist = section.settings.footer_linklist -%}
+    {% if linklists[footer_linklist].links.size > 0 %}
+      <ul>
+        {% for link in linklists[footer_linklist].links %}
+          <li><a href="{{ link.url }}">{{ link.title }}</a></li>
         {% endfor %}
       </ul>
-    {% endunless %}
-  {% endif %}
+    {% endif %}
+  </div>
+	{% for block in section.blocks %}
+  	<div class="grid__item one-third">
+  		<h2>{{ block.settings.text_title }}</h2>
+  		<p>{{ block.settings.text_block }}</p>
+  	</div>
+  	{% endfor %}
 
-  {%- assign footer_linklist = section.settings.footer_linklist -%}
-  {% if linklists[footer_linklist].links.size > 0 %}
-    <ul>
-      {% for link in linklists[footer_linklist].links %}
-        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-      {% endfor %}
-    </ul>
-  {% endif %}
-
-  <div class="credits grid__item text-center">
-    &copy; {{ 'layout.footer.copyright' | t }} {{ 'now' | date: "%Y" }} {{ shop.name | link_to: '/' }}<br />
-    <a href="https://joelkrause.co" target="_blank">ecommerce by joel krause</a> | <a href="http://shopify.com.au/?ref=jakdigital" target="_blank">powered by {% include 'icon-shopify-logo' %}</a>
+  <div class="grid__item one-half copyright">
+    &copy; Copyright {{ 'now' | date: "%Y" }} In Season Hunting &amp; Fishing<br />
+    <small><a href="https://joelkrause.co" target="_blank">Store by Joel Krause</a> | <a href="https://shopify.com.au/?ref=jakdigital" target="_blank">Powered by {% include 'icon-shopify-logo' %}</a></small>
+  </div>
+  <div class="grid__item one-half payment-icons text-right">
+    {{ 'eway.png' | asset_url | img_tag }}
+    {{ 'paypal.png' | asset_url | img_tag }}
+    {{ 'visa.png' | asset_url | img_tag }}
+    {{ 'mastercard.png' | asset_url | img_tag }}
+    {{ 'amex.png' | asset_url | img_tag }}
   </div>
 </div>
 </div>
@@ -63,16 +41,30 @@
       {
         "type": "link_list",
         "id": "footer_linklist",
-        "label": "First menu",
+        "label": "Footer Navigation",
         "default": "footer"
-      },
-      {
-        "type": "checkbox",
-        "id": "show_payment_icons",
-        "label": "Show payment icons",
-        "default": false
       }
-    ]
-  }
+    ],
+	"blocks": [
+		{
+			"type": "select",
+			"name": "Footer Content Block",
+				"settings": [
+					{
+						"type": "text",
+						"label": "Title",
+						"id": "text_title",
+						"default": "Title"
+					},
+					{
+						"type": "textarea",
+						"label": "Content",
+						"id": "text_block",
+						"default": "Content"
+					}
+				]
+		}
+	]
+}
 
 {% endschema %}

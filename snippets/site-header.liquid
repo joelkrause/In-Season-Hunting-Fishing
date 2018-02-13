@@ -3,7 +3,11 @@
     <div class="wrapper">
       <div class="grid">
         <div class="grid__item one-half">
-          menu
+          <ul>
+          {% for link in linklists.main-menu.links %}
+             <li>{{ link.title | link_to: link.url }}</li>
+          {% endfor %}
+          </ul>
         </div>
         <div class="grid__item one-half text-right">
           <a href="/cart">
@@ -23,7 +27,7 @@
     <div class="wrapper">
       <div class="site_logo">
         <a href="/">
-          {{ 'logo.png' | asset_url | img_tag }}
+          {{ 'logo-black.png' | asset_url | img_tag }}
         </a>
       </div>
 

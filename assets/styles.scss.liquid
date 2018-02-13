@@ -1,10 +1,9 @@
 /**==== Fonts ====**/
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,700');
-@import url('https://fonts.googleapis.com/css?family=Barlow+Condensed:600');
 
 /**==== Variables ====**/
 $mainFont: "Roboto",sans-serif;
-$accentFont: "Barlow Condensed",sans-serif;
+$accentFont: "prohibition",sans-serif;
 
 $accentColor: {{ settings.accentColor }};
 
@@ -72,10 +71,23 @@ html {
   padding: 10px 0;
   font-family: $accentFont;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: normal;
 
   a {
     color: {{ settings.top_bar_color }};
+  }
+  ul,
+  li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  li {
+    display: inline-block;
+  }
+  li a {
+    padding: 0 5px;
+    text-decoration: none;
   }
 }
 
@@ -84,7 +96,7 @@ html {
   color: {{ settings.site_info_text_color }};
   padding: 10px 0;
   font-family: $accentFont;
-  font-weight: 700;
+  font-weight: normal;
   font-size: 14pt;
   text-transform: uppercase;
 
@@ -108,7 +120,7 @@ html {
 .mega-menu {
     font-family: $accentFont;
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: normal;
     font-size: 16pt;
     padding: 0 2%;
 
@@ -129,6 +141,7 @@ html {
     }
 
     li:hover a {
+      color: #ffffff;
       background-color: #182968;
     }
 
@@ -153,13 +166,14 @@ html {
       .title {
         font-family: $accentFont;
         text-transform: uppercase;
-        font-weight: 700;
+        font-weight: normal;
         font-size: 14pt;
         border-bottom: 1px solid #041246;
         padding: 0 0 10px 0;
         margin: 0 0 10px 0;
       }
       .site-nav a {
+        color: #ffffff;
         padding: 0 0 15px 0;
         margin: 0;
         font-weight: 300;
@@ -194,6 +208,8 @@ html {
     background-position: center;
     color: #ffffff;
     position: relative;
+    /**-webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);**/
 
     .breadcrumbs {
       color: white;
@@ -211,8 +227,8 @@ html {
       margin: 0 0 10px 0;
       padding: 0 0 10px 0;
       font-family: $accentFont;
-      font-weight: 700;
-      font-size: 54pt;
+      font-weight: normal;
+      font-size: 46pt;
       text-transform: uppercase;
       position: relative;
       display: inline-block;
@@ -245,7 +261,7 @@ html {
     left: 0;
 }
 
-.page-title-container:after {
+/**.page-title-container:after {
     content: '';
     width: 100%;
     height: 100%;
@@ -256,25 +272,41 @@ html {
     position: absolute;
     bottom: 0;
     left: 0;
-}
+}**/
 
 /**==== Pages ====**/
 .page_wrap {
     background-color: #fff;
     padding: 50px;
     margin-top: -200px;
-    border: 1px solid #ececec;
+    position: relative;
+    z-index: 10;
+    border-top: 5px solid #041246;
+    box-shadow: 0px 1px 2px #ccc;
     @include border-radius(3px);
     position: relative;
     z-index: 10;
 }
 
+.contact_map {
+  padding-bottom: 50px;
+}
+
 /**==== Collection Page ====**/
 .product-card {
+    position: relative;
 
+  .on-sale {
+    position: absolute;
+    background: #27ae60;
+    color: #fff;
+    padding: 5px;
+    top: 0;
+    left: 0;
+  }
   .title {
     font-family: $accentFont;
-    font-weight: 700;
+    font-weight: normal;
     color: $accentColor;
     text-transform: uppercase;
     text-decoration: none;
@@ -287,7 +319,7 @@ html {
     color: white;
     font-family: $accentFont;
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: normal;
     text-align: center;
     text-decoration: none;
   }
@@ -316,7 +348,7 @@ html {
   button {
     font-family: $accentFont;
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: normal;
     font-size: 18pt;
     width: 100%;
     background-color: #182968;
@@ -350,7 +382,7 @@ html {
     font-family: $accentFont;
     color: $accentColor;
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: normal;
   }
 }
 
@@ -364,6 +396,31 @@ html {
     a {
       color: {{ settings.footer_text }};
       text-decoration: none;
+    }
+    h2 {
+      font-family: $accentFont;
+      text-transform: uppercase;
+      font-weight: normal;
+      border-bottom: 1px solid #182968;
+      padding: 0 0 10px 0;
+    }
+    ul,
+    li {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+    li a {
+      padding: 10px 0;
+      font-family: $accentFont;
+      text-transform: uppercase;
+    }
+    .copyright,
+    .payment-icons {
+      padding-top: 50px;
+    }
+    .payment-icons img {
+      max-width: 52px;
     }
 }
 

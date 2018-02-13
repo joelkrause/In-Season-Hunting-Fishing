@@ -1,3 +1,14 @@
+<div class="page-title-container">
+  <div class="wrapper">
+    <div class="breadcrumbs">
+      {% include 'breadcrumbs' %}
+    </div>
+    <h1>
+      Search
+    </h1>
+  </div>
+</div>
+<div class="wrapper page_wrap">
 {% paginate search.results by 10 %}
 
   <h1>
@@ -11,21 +22,6 @@
       {{ 'general.search.title' | t }}
     {% endif %}
   </h1>
-
-  <form action="/search" method="get" role="search">
-    <label for="Search" class="label-hidden">
-      {{ 'general.search.placeholder' | t }}
-    </label>
-    <input type="search"
-           name="q"
-           id="Search"
-           value="{{ search.terms | escape }}"
-           placeholder="{{ 'general.search.placeholder' | t }}">
-    <button type="submit" class="btn">
-      {% include 'icon-search' %}
-      <span class="icon-fallback-text">{{ 'general.search.submit' | t }}</span>
-    </button>
-  </form>
 
 
 {% if search.performed %}
@@ -79,3 +75,4 @@
   {% endif %}
 
 {% endpaginate %}
+</div>

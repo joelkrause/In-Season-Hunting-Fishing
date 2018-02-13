@@ -1,5 +1,15 @@
-<h1>{{ page.title }}</h1>
-
-<div class="rte">
-  {{ page.content }}
+<div class="page-title-container">
+  <div class="wrapper">
+    <div class="breadcrumbs">
+      {% include 'breadcrumbs' %}
+    </div>
+    <h1>
+      {{ page.title }}
+    </h1>
+  </div>
+</div>
+<div class="wrapper page_wrap">
+  <div class="rte">
+    {{ page.content }}
+  </div>
 </div>

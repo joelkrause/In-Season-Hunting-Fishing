@@ -24,7 +24,7 @@
       &ndash; {{ shop.name }}
     {% endunless %}
   {% endcapture %}
-  <title>{{ seo_title }}</title>
+  <title>{{ seo_title }} | Hunting &amp; Fishing Super Store Warragul, Gippsland, Victoria</title>
 
   {% if page_description %}
     <meta name="description" content="{{ page_description | escape }}">
@@ -36,6 +36,8 @@
   {{ 'styles.scss.css' | asset_url | stylesheet_tag }}
 
   <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+  <link rel="stylesheet" href="https://use.typekit.net/aez0jws.css">
 
   <script>
     document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
