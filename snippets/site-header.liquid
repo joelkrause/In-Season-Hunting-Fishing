@@ -1,28 +1,4 @@
 <div data-section-type="header-section">
-    <header class="top-bar">
-    <div class="wrapper">
-      <div class="grid">
-        <div class="grid__item one-half">
-          <ul>
-          {% for link in linklists.main-menu.links %}
-             <li>{{ link.title | link_to: link.url }}</li>
-          {% endfor %}
-          </ul>
-        </div>
-        <div class="grid__item one-half text-right">
-          <a href="/cart">
-            {% include 'icon-cart' %}
-            {{ 'layout.cart.title' | t }}
-            ({{ cart.item_count }} {{ 'layout.cart.items_count' | t: count: cart.item_count }})
-          </a>
-
-          <a href="/account">
-            My Account
-          </a>
-        </div>
-      </div>
-    </div>
-  </header>
   <header role="banner" class="site-header">
     <div class="wrapper">
       <div class="site_logo">
@@ -48,6 +24,12 @@
               <span class="icon-fallback-text">{{ 'general.search.submit' | t }}</span>
             </button>
           </form>
+        </div>
+        <div class="cart-account-end">
+          <a href="/cart">
+            {% include 'icon-cart' %}
+            <span class="cart-count">{{ cart.item_count }}</span>
+          </a>
         </div>
     </div>
   </header>
