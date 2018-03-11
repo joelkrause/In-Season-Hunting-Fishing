@@ -6,10 +6,8 @@
           {{ 'logo-black.png' | asset_url | img_tag }}
         </a>
       </div>
-
-        {% include 'mega-menu' %}
-
-        <div class="search-bar">
+      {% section 'site-info' %}
+        <!--<div class="search-bar">
           <form action="/search" method="get" role="search">
             <label for="Search" class="label-hidden">
               {{ 'general.search.placeholder' | t }}
@@ -24,7 +22,7 @@
               <span class="icon-fallback-text">{{ 'general.search.submit' | t }}</span>
             </button>
           </form>
-        </div>
+        </div>-->
         <div class="cart-account-end">
           <a href="/cart">
             {% include 'icon-cart' %}
@@ -34,5 +32,7 @@
     </div>
   </header>
 
-  {% section 'site-info' %}
+  {% include 'mega-menu' %}
+
+
 </div>

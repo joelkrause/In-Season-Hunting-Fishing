@@ -27,7 +27,7 @@ html {
 /**==== Site Header ====**/
 .site-header {
   background-color: {{ settings.site_header_background }};
-  padding: 5px 0;
+  padding: 20px 0;
 
   .wrapper {
     display: flex;
@@ -35,7 +35,7 @@ html {
     overflow: inherit;
   }
   .site_logo img {
-    max-width: 140px;
+    max-width: 120px;
   }
   h1 {
     margin: 0;
@@ -116,6 +116,10 @@ html {
   }
 }
 
+#shopify-section-site-info {
+    flex-grow: 1;
+}
+
 .site-info {
   background-color: {{ settings.site_info_background }};
   color: {{ settings.site_info_text_color }};
@@ -143,10 +147,11 @@ html {
 
 /**==== Navigation ====**/
 .mega-menu {
+    background-color: {{ settings.main_nav_background }};
     font-family: $accentFont;
     text-transform: uppercase;
     font-weight: normal;
-    font-size: 16pt;
+    font-size: 14pt;
     padding: 0 2%;
 
     li,
@@ -159,8 +164,7 @@ html {
 
     a {
       color: {{ settings.main_nav_color }};
-      padding: 15px 20px 35px 20px;
-      margin: 25px 0 0 0;
+      padding: 10px 20px 14px 20px;
       text-decoration: none;
       display: block;
     }
@@ -227,7 +231,7 @@ html {
 
 /**==== Page Title ====**/
 .page-title-container {
-    padding: 150px 0 350px 0;
+    padding: 100px 0 300px 0;
     background-image: url({{ 'header-bg.jpg' | asset_url }});
     background-size: cover;
     background-position: center;
@@ -235,6 +239,7 @@ html {
     position: relative;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    text-align: center;
 
     .breadcrumbs {
       color: white;
@@ -253,7 +258,7 @@ html {
       padding: 0 0 10px 0;
       font-family: $accentFont;
       font-weight: normal;
-      font-size: 46pt;
+      font-size: 32pt;
       text-transform: uppercase;
       position: relative;
       display: inline-block;
@@ -264,11 +269,11 @@ html {
       content: '';
       width: 25%;
       height: 5px;
-      background-color: $accentColor;
+      background-color: #27ae60;
       position: absolute;
       display: inline-block;
       bottom: 0;
-      left: 0;
+      left: 35%;
     }
     div {
         position: relative;
