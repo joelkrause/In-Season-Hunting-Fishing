@@ -1,0 +1,50 @@
+<div class="site-contact">
+  {% for block in section.blocks %}
+    <div class="site-contact-block">
+      <div class="left">
+        <div class="contact-icon">
+          <img src="{{ block.settings.contact-icon | img_url: '32x' }}" />
+        </div>
+      </div>
+      <div class="right">
+        <div class="contact-title">
+          {{ block.settings.contact-title }}
+        </div>
+        <div class="contact-text">
+          {{ block.settings.contact-text }}
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "Contact Information",
+  "settings": [
+  ],
+  "blocks": [
+    {
+      "type": "select",
+      "name": "Site Contact",
+      "settings": [
+        {
+          "id": "contact-title",
+          "type": "text",
+          "label": "Contact Title"
+        },
+        {
+          "id": "contact-text",
+          "type": "text",
+          "label": "Contact Text"
+        },
+        {
+          "id": "contact-icon",
+          "type": "image_picker",
+       		"label": "Contact Icon"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

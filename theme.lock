@@ -9,6 +9,8 @@ assets/grunge.png:
   production: 2018-02-12T12:50:03+11:00   5b998b3943346d8db7bb58f46b776e3d
 assets/header-bg.jpg:
   production: 2018-02-12T20:20:45+11:00   9ce2ec847db1fd461f6cc39c54d01151
+assets/hero-bottom.png:
+  production: 2018-03-12T10:44:01+11:00   28d90788b0b607bd8a9e4638dd149c87
 assets/ico-select.svg.liquid:
   production: 2018-02-12T11:31:00+11:00   765be6d2ef08d76aa0f1aab48a10e2b7
 assets/logo-black.png:
@@ -20,7 +22,7 @@ assets/mastercard.png:
 assets/paypal.png:
   production: 2018-02-13T18:53:22+11:00   83bc5ca661e2258de31d4e488f5ca015
 assets/styles.scss.liquid:
-  production: 2018-03-10T21:32:51+11:00   74eae88b772c957109883ddef7b28257
+  production: 2018-03-12T19:31:39+11:00   1561124147eb9566970addabac2223e2
 assets/theme.js:
   production: 2018-02-12T22:35:10+11:00   a18a9b65da1e747c2ebfb58af7c59681
 assets/theme.scss.liquid:
@@ -30,13 +32,13 @@ assets/vendor.js:
 assets/visa.png:
   production: 2018-02-13T18:53:22+11:00   c872e942c3bb3b9f1a7bc591dd92f8f7
 config/settings_schema.json:
-  production: 2018-02-12T14:40:11+11:00   e7d6a9c6f2f36d72567e31a3be831942
+  production: 2018-03-12T11:15:22+11:00   110d2b7b8859a01b77cb9e908cd1f27d
 layout/gift_card.liquid:
   production: 2018-02-12T11:31:00+11:00   b58166c5e68a3ac6fc885d27b6c84eb4
 layout/password.liquid:
   production: 2018-02-12T11:31:00+11:00   a3126a75f83c949db861167020c63219
 layout/theme.liquid:
-  production: 2018-02-13T15:38:24+11:00   07a69a35c0bcf1552de8496e1427bed7
+  production: 2018-03-12T19:52:28+11:00   4f567eb08cd336d29e67baa7f46a8b74
 locales/da.json:
   production: 2018-02-12T11:31:00+11:00   95a58eb18067e4498baaf8f5e1ba3b42
 locales/de.json:
@@ -64,11 +66,13 @@ sections/featured-product.liquid:
 sections/fishing-menu.liquid:
   production: 2018-02-12T17:36:29+11:00   0f8c58eceb8695e37c33810930ed574f
 sections/footer.liquid:
-  production: 2018-02-26T13:21:59+11:00   6d7e46785cd7538c6810434055694f53
+  production: 2018-03-12T19:07:57+11:00   416de7b72711a2f109b608b2b60b196a
 sections/hunting-menu.liquid:
   production: 2018-02-12T17:36:34+11:00   482114186b4dfa83be823e56d0bab83c
 sections/recommended_products.liquid:
   production: 2018-02-13T20:15:31+11:00   97c632648f8f77f993d18738f6e594af
+sections/site-contact.liquid:
+  production: 2018-03-12T12:17:52+11:00   2f5212d50759df943342a81c179e99ea
 sections/site-info.liquid:
   production: 2018-03-10T20:35:17+11:00   8a7289c71e5ed18e19a12b8585bd53d5
 snippets/breadcrumbs.liquid:
@@ -154,7 +158,11 @@ snippets/no-blocks.liquid:
 snippets/pagination.liquid:
   production: 2018-02-12T11:31:01+11:00   d4a467973d86f8663428ddaaaf035d12
 snippets/site-header.liquid:
-  production: 2018-03-10T20:32:26+11:00   b2f5560132ce295c7ae30240fdd15f02
+  production: 2018-03-12T12:11:30+11:00   38dbd9eff3e0e12c9ab669bad3371f5f
+snippets/site-menu.liquid:
+  production: 2018-03-12T19:10:33+11:00   f02c103f1ac4aea95b5934607b7d5ba6
+snippets/slide-cart.liquid:
+  production: 2018-03-12T16:40:03+11:00
 snippets/social-meta-tags.liquid:
   production: 2018-02-12T11:31:01+11:00   312dfc487a1aa92503527dbc4a4e56b4
 snippets/social-sharing.liquid:
@@ -170,7 +178,7 @@ templates/blog.liquid:
 templates/cart.liquid:
   production: 2018-02-13T13:52:36+11:00   d5f451401f539958fa7bc185b9022c9d
 templates/collection.liquid:
-  production: 2018-02-13T20:23:08+11:00   9a84856d9e68a81dcf3caf35970fa6fe
+  production: 2018-03-12T17:54:39+11:00   c54936b24c686c2d88d7cce40f6f10fa
 templates/customers/account.liquid:
   production: 2018-02-12T11:31:01+11:00   4742bf0cc429943e699cbe9a0f528fa8
 templates/customers/activate_account.liquid:
@@ -200,6 +208,6 @@ templates/page.styles.liquid:
 templates/password.liquid:
   production: 2018-02-12T11:31:02+11:00   73bba9f7f2437720e1e1fde57b544859
 templates/product.liquid:
-  production: 2018-02-13T20:15:44+11:00   eb2ceda7525f379acad334646d2e522e
+  production: 2018-03-12T16:46:27+11:00   2bbde8924aeadfad05b63883e4dff350
 templates/search.liquid:
   production: 2018-02-13T13:46:53+11:00   9231e09365816d7c187fdc8b04874c20

@@ -139,6 +139,16 @@
     ]
   },
   {
+    "name": "Header Navigation",
+    "settings": [
+      {
+        "type": "link_list",
+        "id": "main_linklist",
+        "default": "main-menu"
+      }
+    ]
+  },
+  {
     "name": "Social media",
     "settings": [
       {

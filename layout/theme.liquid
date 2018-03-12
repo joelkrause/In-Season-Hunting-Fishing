@@ -15,7 +15,7 @@
   {% capture seo_title %}
     {{ page_title  | replace: '-', ' '}}
     {% if current_tags %}
-      {%- assign meta_tags = current_tags | join: ', '  | replace: '-', ' ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags -}}
+      {%- assign meta_tags = current_tags | join: ', '  | replace: '-', ' ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags | capitalize -}}
     {% endif %}
     {% if current_page != 1 %}
       &ndash; {{ 'general.meta.page' | t: page: current_page }}
@@ -24,7 +24,9 @@
       &ndash; {{ shop.name }}
     {% endunless %}
   {% endcapture %}
-  <title>{{ seo_title }} | Hunting &amp; Fishing Super Store Warragul, Gippsland, Victoria</title>
+  <title>{% if current_tags %}{% assign words = current_tags.first | split: '-' %}
+  {% for word in words %}{{ word | capitalize }} {% endfor %} &dash; {% endif %}{{ page_title }}{% if current_page != 1 %} &ndash; Page {{ current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %} &dash; Hunting and Fishing Superstore, Warragul, Gippsland
+  </title>
 
   {% if page_description %}
     <meta name="description" content="{{ page_description | escape }}">

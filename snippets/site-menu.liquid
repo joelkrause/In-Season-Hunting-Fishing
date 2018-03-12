@@ -1,0 +1,57 @@
+<nav role="navigation" class="site-nav">
+  <ul>
+    <li>
+      <a href="/">
+        <i class="fas fa-home"></i>
+      </a>
+    </li>
+    {% for link in linklists[settings.main_linklist].links %}
+      {% assign child_list_handle = link.title | handleize %}
+      {% if linklists[child_list_handle].links != blank %}
+         {% assign submenu_active = false %}
+         {% for childlink in linklists[child_list_handle].links %}
+            {% if childlink.active %}
+               {% assign submenu_active = true %}
+            {% endif %}
+         {% endfor %}
+         <li class="submenu{% if link.active or submenu_active %} selected{% endif %}" aria-haspopup="true">
+            <a href="{{ link.url }}">
+               {{ link.title }}
+               <i class="fas fa-angle-down"></i>
+            </a>
+            <ul class="sub-menu">
+            {% for childlink in linklists[child_list_handle].links %}
+               {% assign grand_child_list_handle = childlink.title | handle %}
+               {% if linklists[grand_child_list_handle] and linklists[grand_child_list_handle].links.size > 0 %}
+                  {% assign thirdmenu_active = false %}
+                  {% for grandchildlink in linklists[grand_child_list_handle].links %}
+                     {% if grandchildlink.active %}
+                        {% assign thirdmenu_active = true %}
+                     {% endif %}
+                  {% endfor %}
+                  <li class="thirdmenu{% if link.active or thirdmenu_active %} selected{% endif %}" aria-haspopup="true">
+                        <a href="{{ link.url }}">
+                           {{ childlink.title }}
+                     </a>
+                     <ul class="third-menu">
+                        {% for grand_childlink in linklists[grand_child_list_handle].links %}
+                           <li{% if grand_childlink.active %} class="selected"{% endif %}>
+                              <a href="{{ grand_childlink.url }}">{{ grand_childlink.title }}</a>
+                              </li>
+                           {% endfor %}
+                     </ul>
+                  </li>
+               {% else %}
+                  <li{% if childlink.active %} class="selected"{% endif %}><a href="{{ childlink.url }}">{{ childlink.title | escape }}</a></li>
+               {% endif %}
+            {% endfor %}
+            </ul>
+         </li>
+      {% else %}
+         <li{% if link.active %} class="selected"{% endif %}>
+            <a href="{{ link.url }}">{{ link.title }}</a>
+         </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</nav>
