@@ -30,9 +30,7 @@
                      {% endif %}
                   {% endfor %}
                   <li class="thirdmenu{% if link.active or thirdmenu_active %} selected{% endif %}" aria-haspopup="true">
-                        <a href="{{ link.url }}">
-                           {{ childlink.title }}
-                     </a>
+                     <span class="child-title">{{ childlink.title }}</span>
                      <ul class="third-menu">
                         {% for grand_childlink in linklists[grand_child_list_handle].links %}
                            <li{% if grand_childlink.active %} class="selected"{% endif %}>
