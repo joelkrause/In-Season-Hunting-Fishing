@@ -1,6 +1,6 @@
 <footer class="optin">
   <div class="wrapper">
-    <h1>Title</h1>
+    <h1 style="color:{{ section.settings.optin-title-color }};">{{ section.settings.optin-title }}</h1>
     <div class="form">form</div>
   </div>
 </footer>
@@ -53,6 +53,18 @@
         "id": "footer_linklist",
         "label": "Footer Navigation",
         "default": "footer"
+      },
+      {
+        "type": "text",
+        "id": "optin-title",
+        "label": "Optin Form Title",
+        "default": "Optin Form"
+      },
+      {
+        "type": "color",
+        "id": "optin-title-color",
+        "label": "Optin Form Title Color",
+        "default": "#333"
       }
     ],
 	"blocks": [

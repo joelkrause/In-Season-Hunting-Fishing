@@ -25,9 +25,8 @@
   <div class="grid">
     <div class="grid__item one-quarter">
       <div class="collection_sidebar">
-        {% include 'collection-filter' %}
-
         {% include 'sort-by-filter' %}
+        {% include 'collection-filter' %}
       </div>
     </div>
     <div class="grid__item three-quarters">
@@ -43,7 +42,7 @@
               </div>
             {% endif %}
             {% if product.featured_image != blank %}
-              {{ product.featured_image.src | img_url: '480x480' | img_tag: product.featured_image.alt }}
+              {{ product.featured_image.src | img_url: 'x480' | img_tag: product.featured_image.alt }}
             {% endif %}
 
             <p class="title">

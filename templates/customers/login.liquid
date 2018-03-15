@@ -44,14 +44,8 @@
 
     <input type="submit" class="btn" value="{{ 'customer.login.sign_in' | t }}">
 
-    <a href="/">{{ 'customer.login.cancel' | t }}</a>
-
-    <a href="/account/register">
-      {{ 'layout.customer.create_account' | t }}
-    </a>
-
     {% if form.password_needed %}
-      <a href="#recover" id="RecoverPassword">{{ 'customer.login.forgot_password' | t }}</a>
+      <a href="#recover" class="recover-btn" id="RecoverPassword">{{ 'customer.login.forgot_password' | t }}</a>
     {% endif %}
   {% endform %}
 

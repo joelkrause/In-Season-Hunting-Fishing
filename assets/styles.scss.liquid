@@ -78,10 +78,15 @@ body {
   }
   a {
     color: {{ settings.site_header_link_color }};
+    text-decoration: none;
   }
   .cart-account-end {
     padding-left: 25px;
     position: relative;
+
+    a:first-of-type {
+      margin-right: 10px;
+    }
 
     svg {
       height: 30px;
@@ -256,6 +261,10 @@ body {
     border-bottom-left-radius: 5px;
     text-align: left;
 
+    a:hover {
+      opacity: 0.8;
+    }
+
     li {
       display: block;
       width: 100%;
@@ -293,13 +302,15 @@ body {
 /**==== Page Title ====**/
 .page-title-container {
     padding: 150px 0 250px 0;
+    width: 95%;
+    max-width: 1880px;
     background-image: url({{ 'header-bg.jpg' | asset_url }});
     background-size: cover;
     background-position: center;
     color: #ffffff;
     position: relative;
     text-align: center;
-    margin: 50px;
+    margin: 50px auto;
     @include border-radius(10px);
 
     .breadcrumbs {
@@ -471,6 +482,19 @@ body {
     border-right: 1px solid #ececec;
     height: 100%;
     padding: 0 50px 0 0;
+
+    h4:first-of-type {
+      margin-top: 0;
+    }
+
+    select {
+      width: 100%;
+      padding: 10px;
+      @include border-radius(3px);
+      border: 2px solid #ececec;
+      font-family: $mainFont;
+      text-transform: capitalize;
+    }
 }
 
 /**==== Product Page ====**/
@@ -520,6 +544,41 @@ body {
   }
 }
 
+/**==== Account Pages ====**/
+#CustomerLoginForm {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+
+    input {
+        width: 100%;
+        padding: 10px;
+        margin: 0 0 15px 0;
+        font-family: $mainFont;
+        font-weight: normal;
+    }
+    input.btn
+    {
+        background-color: $accentColor;
+        color: white;
+        font-family: $mainFont;
+        font-weight: 700;
+    }
+    .recover-btn {
+      display: block;
+      color: $accentColor;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-family: $mainFont;
+        font-weight: 700;
+        font-size: 14pt;
+    }
+}
+
 /**==== Footer ====**/
 .site-footer {
     color: {{ settings.footer_text }};
@@ -532,7 +591,7 @@ body {
     h2 {
       font-family: $mainFont;
       font-weight: 700;
-      border-bottom: 1px solid #333333;
+      border-bottom: 1px solid #ececec;
       padding: 0 0 10px 0;
     }
     ul,
@@ -551,6 +610,15 @@ body {
     }
     .payment-icons img {
       max-width: 52px;
+    }
+}
+
+footer.optin {
+    padding: 50px 0;
+    text-align: center;
+
+    h1 {
+      margin-top: 0;
     }
 }
 
