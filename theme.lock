@@ -68,7 +68,7 @@ sections/featured-product.liquid:
 sections/fishing-menu.liquid:
   production: 2018-02-12T17:36:29+11:00   0f8c58eceb8695e37c33810930ed574f
 sections/footer.liquid:
-  production: 2018-03-15T01:32:12+11:00   c437ff2c27fb541ab557cd0a36119850
+  production: 2018-03-19T08:43:54+11:00   20d6ba6d1d6cae21b867e0875b90c5cb
 sections/hunting-menu.liquid:
   production: 2018-02-12T17:36:34+11:00   482114186b4dfa83be823e56d0bab83c
 sections/recommended_products.liquid:
